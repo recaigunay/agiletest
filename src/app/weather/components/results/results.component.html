@@ -1,3 +1,4 @@
+<p *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</p>
 <table class="table" *ngIf="cityList && cityList.length > 0; else showMessage">
   <thead class="thead-dark">
   <tr>

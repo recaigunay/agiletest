@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ResultsComponent {
   @Input() cityList = [];
+  @Input() errorMessage:string;
 }
 
 

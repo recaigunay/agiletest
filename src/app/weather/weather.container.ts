@@ -11,11 +11,12 @@ import { Summary } from '../model/weather';
   selector: 'app-weather',
   template: `
   <app-search (searchValue)="citySearch($event)"></app-search>
-  <app-results [cityList]="cityList$ | async"></app-results>  `
+  <app-results [cityList]="cityList$ | async"  [errorMessage]="errorMessage$ | async"></app-results>  `
 })
 export class WeatherContainer implements OnInit {
 
-  cityList$: Observable<Summary[]>
+  cityList$: Observable<Summary[]>;
+  errorMessage$:Observable<string>;
 
   constructor(private store: Store<AppState>) { }
 
@@ -27,5 +28,6 @@ export class WeatherContainer implements OnInit {
   ngOnInit() {
     this.store.dispatch({ type: 'SEARCH_CITY' });
     this.cityList$ = this.store.select(selectors.getCityList);    
+    this.errorMessage$ = this.store.select(selectors.getErrorMessage);   
   }
 }

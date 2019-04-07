@@ -31,6 +31,7 @@ export function cityReducer(state = initialState, action: weatherActions.Action)
           action.payload
         ],
         loading: false,
+        error:""
       }
     }
     case weatherActions.WeatherActionTypes.SEARCH_CITY_FAIL: {
