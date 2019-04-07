@@ -7,11 +7,9 @@ import { Component,  Output, EventEmitter  } from '@angular/core';
 export class SearchComponent {
   // IMPLEMENT ANY INPUT OR OUTPUT YOU MIGHT NEED
   @Output()
-  searchedCity = new EventEmitter<string>();
+  searchValue = new EventEmitter<string>();
   
-  constructor() { }
-
   search(value) {
-    this.searchedCity.emit(value)
+    this.searchValue.emit(value)
   }
 }

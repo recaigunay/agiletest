@@ -29,14 +29,12 @@ describe('SearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  
   it('should emit search value',(done) => {
     let child = new SearchComponent();
-            child.searchedCity.subscribe(g => {
-               expect(g).toEqual('test');
-               done();
-            });
-            child.search("test");
+    child.searchValue.subscribe(g => {
+        expect(g).toEqual('test');
+        done();
+    });
+    child.search("test");
   })
-  
 });

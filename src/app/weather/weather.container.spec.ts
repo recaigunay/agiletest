@@ -14,29 +14,29 @@ describe('WeatherContainer', () => {
   let component: WeatherContainer;
   let fixture: ComponentFixture<WeatherContainer>;
 
-    beforeEach(async(() => { 
+  beforeEach(async(() => {
 
-      let initial = {
-        cityList: [{
-          city: "london",
-          country: "UK",
-          temperature06am: 1,
-          temperature12pm: 2,
-          temperature06pm: 3,
-          temperature12am: 4
-        }], loading: false, loaded: false, error: ""
-      }
-  
-      let appState = { city: initial };
+    let initial = {
+      cityList: [{
+        city: "london",
+        country: "UK",
+        temperature06am: 1,
+        temperature12pm: 2,
+        temperature06pm: 3,
+        temperature12am: 4
+      }], loading: false, error: ""
+    }
 
-      TestBed.configureTestingModule({
-        declarations: [ WeatherContainer ],
-        imports: [StoreModule.forRoot({}), StoreModule.forFeature('city',cityReducer)],
-        schemas: [CUSTOM_ELEMENTS_SCHEMA],
-        providers: [  ]
-      });
-    
-    }));
+    let appState = { city: initial };
+
+    TestBed.configureTestingModule({
+      declarations: [WeatherContainer],
+      imports: [StoreModule.forRoot({}), StoreModule.forFeature('city', cityReducer)],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: []
+    });
+
+  }));
 
 
   beforeEach(() => {
@@ -56,8 +56,6 @@ describe('WeatherContainer', () => {
     //   expect(cities[0].city).toBe("london")
     // });
   })
-
-
 });
 
 

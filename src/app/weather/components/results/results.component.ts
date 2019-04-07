@@ -5,9 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './results.component.html'
 })
 export class ResultsComponent {
-  @Input() cities=[];
-  constructor() { }
-
+  @Input() cityList = [];
 }
 
 
